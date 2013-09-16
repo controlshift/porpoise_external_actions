@@ -22,15 +22,15 @@ RSpec.configure do |config|
 end
 
 def stub_get(path)
-  stub_request(:get, path)
+  stub_porpoise_request(:get, path)
 end
 
 def stub_post(path)
-  stub_action_kit_request(:post, path)
+  stub_porpoise_request(:post, path)
 end
 
-def stub_request(method, path)
-  stub_request(method, "https://test.com" + path)
+def stub_porpoise_request(method, path)
+  stub_request(method, "https://controlshift:controlshift@test.com" + path)
 end
 
 

@@ -1,7 +1,7 @@
 module PorpoiseExternalActions
   class Action < PorpoiseExternalActions::Model
     def base_path
-      normalized_base_path('external_activity_event')
+      normalized_base_path('external_activity_events')
     end
 
     def create(params)

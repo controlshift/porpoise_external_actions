@@ -18,7 +18,16 @@ describe PorpoiseExternalActions::Client do
     context 'stack' do
       let(:options) { {} }
       specify { handlers.should include(Faraday::Request::UrlEncoded)  }
-      specify { handlers.should include(Vertebrae::Response::RaiseError)  }
+      specify { handlers.should include(PorpoiseExternalActions::ExceptionMiddleware)  }
     end
+  end
+
+  describe 'configure models' do
+    let(:client) { PorpoiseExternalActions.new(host: 'test.com', username: 'controlshift', password: 'controlshift', movement_id: 'controlshift') }
+
+    it 'should set the movement_id from the connection' do
+      client.action.movement_id.should == 'controlshift'
+    end
+
   end
 end
