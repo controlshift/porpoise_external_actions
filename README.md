@@ -5,7 +5,7 @@ An API client in ruby for the Purpose Platform External Actions API
 
 [![Build Status](https://travis-ci.org/controlshift/porpoise_external_actions.png)](https://travis-ci.org/controlshift/porpoise_external_actions)
 
-== Usage
+## Usage
 
 ```
 require 'porpoise_external_actions'
@@ -19,12 +19,12 @@ response = client.action.create { source: 'foo', role: 'signer', action_slug: "s
 response # is a Farraday::Response object, API always returns an empty body with 201 status.
 ```
 
-=== Exceptions
+### Exceptions
 
-PorpoiseInvalidException - thrown for validation exceptions, when API return 422. Contains error message raw response.
-PorpoiseException - thrown when endpoint returns 500. Contains error message and raw http response
+* PorpoiseInvalidException - thrown for validation exceptions, when API return 422. Contains error message raw response.
+* PorpoiseException - thrown when endpoint returns 500. Contains error message and raw http response
 
 
-== Purpose API Documentation
+## Purpose API Documentation
 
 https://github.com/PurposeOpen/Platform/wiki/Create-External-Activity-Event
